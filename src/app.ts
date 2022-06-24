@@ -6,14 +6,15 @@ import { makeExecutableSchema } from "@graphql-tools/schema";
 import express from "express";
 import { ApolloServer,ApolloError } from "apollo-server-express";
 import { typeDefs } from "./schema"
-import { Query } from "./resolvers/query"
+import { Query,Author,Book,PressHouse} from "./resolvers/query"
 import { Mutation } from "./resolvers/mutations"
-import { Subscription } from "./resolvers/subscription"
 export const userChat=[];
 const resolvers = {
   Query,
   Mutation,
-  Subscription
+  Book,
+  Author,
+  PressHouse
   };
 
 const run = async () => {
